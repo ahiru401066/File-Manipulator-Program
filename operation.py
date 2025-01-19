@@ -13,7 +13,7 @@ def main(args):
     elif(args[1] == "copy"):
         copyContents(contents, outputpath)
     elif(args[1] == "duplicate"):
-        duplicateContents(contents, inputpath, int(args[3]))
+        duplicateContents(contents, outputpath, int(args[3]))
     elif(args[1] == "replace"):
         replaceContents(contents, outputpath, args[3], args[4])
     
@@ -30,10 +30,10 @@ def copyContents(contents, outputpath):
     with open(outputpath, "w") as f:
         f.write(contents)
 
-def duplicateContents(contents, inputpath, n):
+def duplicateContents(contents, outputpath, n):
     print("execute duplicate")
     """ cotentsをそのファイルに複製 """
-    with open(inputpath, "w") as f:
+    with open(outputpath, "w") as f:
         f.write(contents + ("\n" + contents) * (n-1)) 
 
 def replaceContents(contents, outputpath, needle, newstring):
