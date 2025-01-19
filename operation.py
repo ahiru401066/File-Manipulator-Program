@@ -14,6 +14,8 @@ def main(args):
         copyContents(contents, outputpath)
     elif(args[1] == "duplicate"):
         duplicateContents(contents, inputpath, int(args[3]))
+    elif(args[1] == "replace"):
+        replaceContents(contents, outputpath, args[3], args[4])
     
 def reverseContents(contents, outputpath):
     """ contentsを逆にして逆順にしたものを新しいファイルに格納 """
@@ -33,5 +35,11 @@ def duplicateContents(contents, inputpath, n):
     """ cotentsをそのファイルに複製 """
     with open(inputpath, "w") as f:
         f.write(contents + ("\n" + contents) * (n-1)) 
+
+def replaceContents(contents, outputpath, needle, newstring):
+    print("execute repalce")
+    changedContents = contents.replace(needle, newstring)
+    with open(outputpath, "w") as f:
+        f.write(changedContents)
 
 main(sys.argv)
