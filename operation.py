@@ -32,6 +32,6 @@ def duplicateContents(contents, inputpath, n):
     print("execute duplicate")
     """ cotentsをそのファイルに複製 """
     with open(inputpath, "w") as f:
-        f.write(("\n" + contents) * n) 
+        f.write(contents + ("\n" + contents) * (n-1)) 
 
 main(sys.argv)
