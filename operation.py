@@ -17,16 +17,20 @@ def main(args):
     
 def reverseContents(contents, outputpath):
     """ contentsを逆にして逆順にしたものを新しいファイルに格納 """
+    print("execute reverse")
     changedContents = contents[::-1]
     with open(outputpath, "w") as f:
         f.write(changedContents)
 
 def copyContents(contents, outputpath):
     """ contentsをコピーして新しいファイルに格納 """
+    print("execute copy")
     with open(outputpath, "w") as f:
         f.write(contents)
 
 def duplicateContents(contents, inputpath, n):
+    print("execute duplicate")
+    """ cotentsをそのファイルに複製 """
     with open(inputpath, "w") as f:
         f.write(("\n" + contents) * n) 
 
