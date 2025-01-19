@@ -2,8 +2,8 @@ import sys
 
 def main(args):
     #本当はターミナルで受け取る
-    inputpath = "./inputtext.txt"
-    outputpath = "./outputtext.txt"
+    inputpath = args[2]
+    outputpath = args[3]
 
     with open(inputpath) as f:
         contents = f.read()
@@ -13,9 +13,9 @@ def main(args):
     elif(args[1] == "copy"):
         copyContents(contents, outputpath)
     elif(args[1] == "duplicate"):
-        duplicateContents(contents, outputpath, int(args[3]))
+        duplicateContents(contents, outputpath, int(args[4]))
     elif(args[1] == "replace"):
-        replaceContents(contents, outputpath, args[3], args[4])
+        replaceContents(contents, outputpath, args[4], args[5])
     
 def reverseContents(contents, outputpath):
     """ contentsを逆にして逆順にしたものを新しいファイルに格納 """
